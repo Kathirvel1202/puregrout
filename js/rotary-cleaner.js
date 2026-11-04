@@ -21,31 +21,28 @@
     let autoInterval = null;
     let autoDirection = 1;
 
-    // Define 3 Distinct Problem Surfaces where BOTH before and after use the SAME matching image
+    // Define 3 Distinct Problem Surfaces with matching Real Before (Dirty) and After (Clean) Photos
     const surfaceProfiles = {
-      commercial: {
-        title: "High-Traffic Commercial Plaza (Porcelain Floor)",
-        image: "assets/images/tile-after-clean.jpg",
-        dirtyFilter: "brightness(0.68) contrast(1.35) sepia(0.35) saturate(0.85)",
-        grimeOpacity: "0.7",
-        status: "230°F Thermal Rinse · 900 PSI Hydro-Rotary Active",
-        detail: "1,850 sq.ft. commercial porcelain restored. Ground-in street sediment & oils extracted."
-      },
       kitchen: {
-        title: "Commercial Kitchen & Food Prep Floor (Quarry Tile)",
-        image: "assets/images/checkered-tile-kitchen.webp",
-        dirtyFilter: "brightness(0.62) contrast(1.4) sepia(0.42) saturate(0.9)",
-        grimeOpacity: "0.8",
-        status: "Alkaline Grease Emulsification · 230°F Deep Flush",
-        detail: "Polymerized cooking oils and blackened grout lines returned to original safety standards."
+        title: "Gourmet & Restaurant Kitchen (Tile & Grout)",
+        dirtyImg: "assets/images/kitchen-before-dirty.jpg",
+        cleanImg: "assets/images/kitchen-after-clean.jpg",
+        status: "Alkaline Grease Emulsification · 230°F Deep Flush Active",
+        detail: "Polymerized cooking oils and blackened grout lines returned to original sanitary standards."
+      },
+      commercial: {
+        title: "High-Traffic Commercial Plaza & Lobby (Porcelain Floor)",
+        dirtyImg: "assets/images/plaza-before-dirty.jpg",
+        cleanImg: "assets/images/plaza-after-clean.jpg",
+        status: "230°F Thermal Rinse · 900 PSI Hydro-Rotary Active",
+        detail: "1,850 sq.ft. commercial porcelain restored. Ground-in pedestrian sediment & traffic lanes extracted."
       },
       shower: {
         title: "Architectural Spa & Walk-In Shower (Subway & Marble)",
-        image: "assets/images/bright-tiled-bathroom.webp",
-        dirtyFilter: "brightness(0.7) contrast(1.3) sepia(0.28) hue-rotate(-10deg)",
-        grimeOpacity: "0.65",
-        status: "pH-Neutral Calcium Lift · Fluoropolymer Color Seal",
-        detail: "Soap scum, iron stains, and mineral scale dissolved without etching natural stone finish."
+        dirtyImg: "assets/images/bathroom-before-dirty.jpg",
+        cleanImg: "assets/images/bathroom-after-clean.jpg",
+        status: "pH-Neutral Mineral Lift · Fluoropolymer Grout Seal",
+        detail: "Deep mold stains, soap scum, and mineral scale dissolved and restored to pristine clean grout."
       }
     };
 
@@ -90,6 +87,13 @@
       divider.addEventListener('pointerdown', startDrag);
       divider.addEventListener('touchstart', startDrag, { passive: true });
     }
+    if (frame) {
+      frame.addEventListener('pointerdown', (e) => {
+        // Only trigger if not clicking buttons or tabs inside frame
+        if (e.target.closest('button')) return;
+        startDrag(e);
+      });
+    }
 
     // Keyboard accessibility
     if (divider) {
@@ -119,24 +123,20 @@
         tab.classList.add('is-active');
 
         const key = tab.dataset.surfaceTarget;
-        const profile = surfaceProfiles[key] || surfaceProfiles.commercial;
+        const profile = surfaceProfiles[key] || surfaceProfiles.kitchen;
 
-        if (dirtyLayer && profile.image) {
+        if (dirtyLayer && profile.dirtyImg) {
           const img = dirtyLayer.querySelector('img');
           if (img) {
-            img.src = profile.image;
-            img.style.filter = profile.dirtyFilter;
-          }
-          const grime = dirtyLayer.querySelector('.rotary-grime-overlay');
-          if (grime) {
-            grime.style.opacity = profile.grimeOpacity;
+            img.src = profile.dirtyImg;
+            img.style.filter = 'none';
           }
         }
-        if (cleanLayer && profile.image) {
+        if (cleanLayer && profile.cleanImg) {
           const img = cleanLayer.querySelector('img');
           if (img) {
-            img.src = profile.image;
-            img.style.filter = 'brightness(1.04) contrast(1.02)';
+            img.src = profile.cleanImg;
+            img.style.filter = 'none';
           }
         }
         if (telemetryStatus) telemetryStatus.textContent = profile.status;

@@ -257,22 +257,12 @@
 }
 
 .rotary-layer-dirty img {
-  filter: brightness(0.68) contrast(1.35) sepia(0.35) saturate(0.85);
-  transition: filter 0.3s ease;
+  filter: none;
 }
 
-/* Grime overlay simulating porous grout discoloration and embedded oils */
+/* Grime overlay (hidden - real high-res dirty photography is used) */
 .rotary-grime-overlay {
-  position: absolute;
-  inset: 0;
-  background: 
-    radial-gradient(ellipse at 30% 40%, rgba(35, 20, 10, 0.45) 0%, transparent 60%),
-    radial-gradient(ellipse at 75% 65%, rgba(45, 30, 15, 0.5) 0%, transparent 55%),
-    linear-gradient(135deg, rgba(20, 15, 10, 0.35) 0%, rgba(45, 30, 15, 0.45) 50%, rgba(15, 10, 5, 0.4) 100%);
-  mix-blend-mode: multiply;
-  pointer-events: none;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
+  display: none;
 }
 
 /* Surface overlay status indicators */
@@ -301,74 +291,129 @@
 
 .rotary-indicator-dirty {
   left: 1.25rem;
-  background: rgba(12, 24, 20, 0.88);
-  border: 1px solid rgba(255, 140, 140, 0.35);
+  background: rgba(12, 24, 20, 0.9);
+  border: 1px solid rgba(255, 120, 120, 0.45);
   color: #FFA8A8;
 }
 
 .rotary-indicator-dirty .indicator-icon {
-  color: #FF6B6B;
+  color: #FF5A5A;
 }
 
 .rotary-indicator-clean {
   right: 1.25rem;
-  background: rgba(12, 24, 20, 0.88);
-  border: 1px solid rgba(217, 177, 103, 0.45);
-  color: #E8CA88;
+  background: rgba(12, 24, 20, 0.9);
+  border: 1px solid rgba(217, 177, 103, 0.55);
+  color: #F0D59A;
 }
 
 .rotary-indicator-clean .indicator-icon {
   color: #D9B167;
 }
 
-/* Industrial Rotary Machine Scrubber Divider */
+/* Industrial Rotary Machine Scrubber Wand (Draggable Physical Wand) */
 .rotary-wand-divider {
   position: absolute;
-  z-index: 5;
+  z-index: 10;
   top: 0;
   bottom: 0;
   left: var(--rotary-pos, 50%);
   transform: translateX(-50%);
-  width: 56px;
+  width: 72px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: ew-resize;
   pointer-events: auto;
+  user-select: none;
+  touch-action: none;
 }
 
+/* Top Dual-Trigger Commercial Handle Grip */
+.rotary-top-grip {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 8;
+  width: 22px;
+  height: 48px;
+  background: linear-gradient(180deg, #101B17 0%, #1A2F27 45%, #0B1411 100%);
+  border: 1.5px solid rgba(217, 177, 103, 0.55);
+  border-radius: 6px 6px 3px 3px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.55), inset 0 1px 2px rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rotary-top-grip::before {
+  content: '';
+  position: absolute;
+  top: 7px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #D9B167 35%, #9E7B33 100%);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.rotary-valve-pin {
+  position: absolute;
+  right: -5px;
+  top: 22px;
+  width: 8px;
+  height: 12px;
+  background: linear-gradient(90deg, #D9B167, #F2D59B);
+  border-radius: 2px 4px 4px 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Stainless Steel Wand Shaft */
 .rotary-wand-laser {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 3.5px;
-  background: linear-gradient(180deg, #D9B167 0%, #FFFFFF 50%, #D9B167 100%);
-  box-shadow: 0 0 16px rgba(217, 177, 103, 0.85), 0 0 4px #FFFFFF;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 7px;
+  border-radius: 3.5px;
+  background: linear-gradient(90deg, #374740 0%, #B8C7C0 25%, #FFFFFF 50%, #B8C7C0 75%, #374740 100%);
+  box-shadow: 
+    0 0 14px rgba(217, 177, 103, 0.45),
+    0 0 5px rgba(0, 0, 0, 0.65),
+    inset 0 0 2px rgba(255, 255, 255, 0.8);
 }
 
+/* Center Digital Controller & Machine Dial */
 .rotary-machine-head {
-  position: relative;
-  z-index: 6;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
   display: grid;
   place-items: center;
-  width: 56px;
-  height: 56px;
+  width: 62px;
+  height: 62px;
   border-radius: 50%;
-  background: radial-gradient(circle, #1F4439 25%, #0B1C15 90%);
-  border: 2.5px solid #D9B167;
+  background: radial-gradient(circle at 35% 32%, #204B3E 0%, #0D201A 70%, #050E0B 100%);
+  border: 3px solid #D9B167;
   color: #D9B167;
   box-shadow: 
-    0 0 25px rgba(217, 177, 103, 0.55),
-    0 10px 25px rgba(0, 0, 0, 0.5);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+    0 0 28px rgba(217, 177, 103, 0.65),
+    0 10px 28px rgba(0, 0, 0, 0.7),
+    inset 0 2px 4px rgba(255, 255, 255, 0.35);
+  transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.18s ease;
 }
 
-.rotary-frame.is-interacting .rotary-machine-head {
-  transform: scale(1.12);
+.rotary-frame.is-interacting .rotary-machine-head,
+.rotary-wand-divider:hover .rotary-machine-head {
+  transform: translate(-50%, -50%) scale(1.1);
   box-shadow: 
-    0 0 35px rgba(217, 177, 103, 0.85),
-    0 12px 35px rgba(0, 0, 0, 0.6);
+    0 0 40px rgba(217, 177, 103, 0.9),
+    0 14px 35px rgba(0, 0, 0, 0.8);
 }
 
 .rotary-dial-inner {
@@ -379,41 +424,111 @@
 }
 
 .rotary-head-icon {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   color: #D9B167;
-  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 .rotary-hud-badge {
   position: absolute;
   bottom: calc(100% + 10px);
   white-space: nowrap;
-  padding: 0.32rem 0.65rem;
-  border-radius: 6px;
-  background: rgba(10, 24, 19, 0.94);
+  padding: 0.35rem 0.7rem;
+  border-radius: 8px;
+  background: rgba(9, 23, 18, 0.96);
   border: 1px solid #D9B167;
   color: #D9B167;
-  font-size: 0.64rem;
+  font-size: 0.65rem;
   font-weight: 800;
   letter-spacing: 0.06em;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
   pointer-events: none;
 }
 
 .rotary-drag-arrows {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 9px);
   white-space: nowrap;
-  padding: 0.25rem 0.55rem;
+  padding: 0.25rem 0.65rem;
   border-radius: 999px;
-  background: rgba(10, 24, 19, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(9, 23, 18, 0.94);
+  border: 1px solid rgba(217, 177, 103, 0.45);
   color: #FFFFFF;
-  font-size: 0.56rem;
+  font-size: 0.58rem;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Bottom Heavy-Duty Rotary Floor Scrubber Head Assembly */
+.rotary-bottom-assembly {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.rotary-swivel-neck {
+  width: 18px;
+  height: 14px;
+  background: linear-gradient(90deg, #374740 0%, #A5B6AF 50%, #374740 100%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.rotary-swivel-neck::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #D9B167;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.6);
+}
+
+.rotary-scrubber-plate {
+  width: 112px;
+  height: 28px;
+  background: linear-gradient(180deg, #183F35 0%, #0F2A23 50%, #D9B167 50%, #B08C42 100%);
+  border: 2px solid #FFFFFF;
+  border-radius: 12px 12px 4px 4px;
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.55),
+    0 0 18px rgba(217, 177, 103, 0.35);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.rotary-skirt-texture {
+  display: block;
+  width: 100%;
+  height: 10px;
+  background: repeating-linear-gradient(
+    90deg,
+    #13241F 0px,
+    #13241F 4px,
+    #D9B167 4px,
+    #D9B167 6px,
+    #0A1411 6px,
+    #0A1411 9px
+  );
+  border-top: 1px solid rgba(0, 0, 0, 0.35);
 }
 
 /* Machine Telemetry Bar */
@@ -920,6 +1035,10 @@
   .h2-hero-actions .button {
     width: 100%;
   }
+  .rotary-top-grip {
+    width: 18px;
+    height: 38px;
+  }
   .rotary-machine-head {
     width: 48px;
     height: 48px;
@@ -927,6 +1046,14 @@
   .rotary-head-icon {
     width: 22px;
     height: 22px;
+  }
+  .rotary-scrubber-plate {
+    width: 84px;
+    height: 22px;
+  }
+  .rotary-hud-badge {
+    font-size: 0.58rem;
+    padding: 0.25rem 0.5rem;
   }
 }
 
