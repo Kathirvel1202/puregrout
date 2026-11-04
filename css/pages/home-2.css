@@ -1,0 +1,1021 @@
+/* ==========================================================================
+   Home 2 Page Styles: Commercial & Architectural Precision Cleaning
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Hero Section
+   -------------------------------------------------------------------------- */
+.h2-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin-top: 0;
+  padding: calc(76px + 2rem) 0 4rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #091712;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.h2-hero-image,
+.h2-hero-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.h2-hero-image {
+  object-fit: cover;
+  object-position: center 48%;
+  filter: brightness(0.9);
+}
+
+.h2-hero-overlay {
+  background: 
+    radial-gradient(circle at center, rgba(7, 18, 14, 0.72) 0%, rgba(7, 18, 14, 0.9) 100%),
+    linear-gradient(0deg, rgba(7, 18, 14, 0.6) 0%, transparent 60%);
+}
+
+.h2-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.h2-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.95rem;
+  margin: 0 auto 1.4rem;
+  border: 1px solid rgba(217, 177, 103, 0.4);
+  border-radius: 999px;
+  background: rgba(14, 33, 27, 0.75);
+  backdrop-filter: blur(10px);
+  color: #D9B167;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.h2-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #D9B167;
+  box-shadow: 0 0 8px #D9B167;
+}
+
+.h2-hero h1 {
+  margin: 0 auto;
+  color: #FFFFFF;
+  font: 400 clamp(3.2rem, 6.8vw, 6.4rem) / 1.02 var(--font-display);
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+.h2-hero h1 em {
+  font-style: normal;
+  color: #D9B167;
+}
+
+.h2-hero-description {
+  max-width: 620px;
+  margin: 1.35rem auto 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(0.96rem, 1.25vw, 1.1rem);
+  line-height: 1.8;
+  text-align: center;
+}
+
+.h2-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+  margin: 2.2rem auto 0;
+}
+
+.h2-trust-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  margin: 3.5rem auto 0;
+  max-width: 860px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+  padding: 1.2rem 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  background: rgba(14, 33, 27, 0.7);
+  backdrop-filter: blur(12px);
+}
+
+.h2-trust-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.h2-trust-item strong {
+  color: #D9B167;
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+.h2-trust-item span {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.74rem;
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   2. Creative Feature: Industrial Rotary Extraction Simulator
+   -------------------------------------------------------------------------- */
+.rotary-showcase-section {
+  background: #F0EEE6;
+}
+
+.rotary-surface-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 2rem;
+}
+
+.rotary-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border: 1.5px solid rgba(24, 63, 53, 0.12);
+  border-radius: 999px;
+  background: #FFFFFF;
+  color: #183F35;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.rotary-pill:hover {
+  border-color: #183F35;
+  transform: translateY(-2px);
+}
+
+.rotary-pill.is-active {
+  background: #183F35;
+  color: #FFFFFF;
+  border-color: #183F35;
+  box-shadow: 0 6px 18px rgba(24, 63, 53, 0.2);
+}
+
+.rotary-pill.is-active span.pill-badge {
+  background: #D9B167;
+  color: #0D1714;
+}
+
+.pill-badge {
+  display: inline-block;
+  padding: 0.18rem 0.45rem;
+  border-radius: 6px;
+  background: #EAF0EC;
+  color: #183F35;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.rotary-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 380px;
+  max-height: 640px;
+  overflow: hidden;
+  border: 4px solid #FFFFFF;
+  border-radius: 24px;
+  background: #0E1815;
+  box-shadow: 0 20px 50px rgba(19, 43, 36, 0.14);
+  user-select: none;
+  cursor: ew-resize;
+  touch-action: pan-y;
+}
+
+.rotary-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.rotary-layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.rotary-layer-clean {
+  z-index: 1;
+}
+
+.rotary-layer-dirty {
+  z-index: 2;
+  clip-path: polygon(0 0, var(--rotary-pos, 50%) 0, var(--rotary-pos, 50%) 100%, 0 100%);
+  transition: clip-path 0.02s linear;
+}
+
+/* Surface overlay status indicators */
+.rotary-indicator {
+  position: absolute;
+  top: 1.1rem;
+  z-index: 4;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.rotary-indicator-dirty {
+  left: 1.1rem;
+  background: rgba(14, 25, 21, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFAEAE;
+}
+
+.rotary-indicator-clean {
+  right: 1.1rem;
+  background: rgba(18, 43, 36, 0.9);
+  border: 1px solid rgba(217, 177, 103, 0.45);
+  color: #D9B167;
+}
+
+/* Industrial Rotary Machine Scrubber Divider */
+.rotary-wand-divider {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  bottom: 0;
+  left: var(--rotary-pos, 50%);
+  transform: translateX(-50%);
+  width: 58px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: ew-resize;
+  pointer-events: auto;
+}
+
+.rotary-wand-laser {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #D9B167 0%, #FFFFFF 50%, #D9B167 100%);
+  box-shadow: 0 0 14px rgba(217, 177, 103, 0.85);
+}
+
+.rotary-machine-head {
+  position: relative;
+  z-index: 6;
+  display: grid;
+  place-items: center;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1F4439 25%, #0B1C15 90%);
+  border: 2.5px solid #D9B167;
+  color: #D9B167;
+  box-shadow: 
+    0 0 25px rgba(217, 177, 103, 0.45),
+    0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.rotary-frame.is-interacting .rotary-machine-head {
+  transform: scale(1.08);
+  box-shadow: 
+    0 0 35px rgba(217, 177, 103, 0.7),
+    0 12px 35px rgba(0, 0, 0, 0.5);
+}
+
+.rotary-head-icon {
+  width: 32px;
+  height: 32px;
+  animation: rotarySpin 8s linear infinite;
+}
+
+@keyframes rotarySpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotary-hud-badge {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  white-space: nowrap;
+  padding: 0.35rem 0.65rem;
+  border-radius: 8px;
+  background: rgba(14, 28, 23, 0.94);
+  border: 1px solid #D9B167;
+  color: #D9B167;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+.rotary-drag-arrows {
+  position: absolute;
+  top: calc(100% + 10px);
+  white-space: nowrap;
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(14, 28, 23, 0.9);
+  color: #FFFFFF;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  pointer-events: none;
+}
+
+/* Machine Telemetry Bar */
+.rotary-telemetry-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 1.4rem;
+  padding: 1.1rem 1.6rem;
+  border: 1px solid rgba(24, 63, 53, 0.1);
+  border-radius: 18px;
+  background: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(38, 51, 47, 0.04);
+}
+
+.telemetry-readout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.telemetry-status {
+  color: #183F35;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.telemetry-detail {
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.auto-clean-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border: 1px solid rgba(24, 63, 53, 0.2);
+  border-radius: 999px;
+  background: #F0F4F1;
+  color: #183F35;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.auto-clean-btn:hover {
+  background: #183F35;
+  color: #FFFFFF;
+  border-color: #183F35;
+}
+
+.auto-clean-btn.is-running {
+  background: #D9B167;
+  color: #0D1714;
+  border-color: #D9B167;
+}
+
+/* --------------------------------------------------------------------------
+   3. Technology / Science Section
+   -------------------------------------------------------------------------- */
+.h2-tech-section {
+  background: #FBFAF6;
+}
+
+.h2-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.35rem;
+}
+
+.h2-tech-card {
+  position: relative;
+  padding: 1.85rem 1.45rem;
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  background: #FFFFFF;
+  box-shadow: 0 10px 28px rgba(38, 51, 47, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.h2-tech-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(24, 63, 53, 0.25);
+  box-shadow: 0 16px 36px rgba(38, 51, 47, 0.1);
+}
+
+.h2-tech-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1.25rem;
+  border-radius: 14px;
+  background: #EAF0EC;
+  color: var(--color-forest);
+}
+
+.h2-tech-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.h2-tech-card h3 {
+  margin: 0 0 0.55rem;
+  color: var(--color-forest);
+  font: 400 1.28rem / 1.2 var(--font-display);
+}
+
+.h2-tech-card p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   4. Core Specialty Programs (Services)
+   -------------------------------------------------------------------------- */
+.h2-programs-section {
+  background: #FBFAF6;
+}
+
+.h2-programs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.6rem;
+}
+
+.h2-program-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  background: #FFFFFF;
+  box-shadow: 0 12px 32px rgba(38, 51, 47, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.h2-program-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 42px rgba(38, 51, 47, 0.12);
+}
+
+.h2-program-media {
+  position: relative;
+  aspect-ratio: 16 / 9.5;
+  overflow: hidden;
+  background: #183F35;
+}
+
+.h2-program-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.h2-program-card:hover .h2-program-media img {
+  transform: scale(1.04);
+}
+
+.h2-program-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.38rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(14, 33, 27, 0.88);
+  backdrop-filter: blur(8px);
+  color: #D9B167;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.h2-program-copy {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.6rem 1.6rem 1.8rem;
+}
+
+.h2-program-copy h3 {
+  margin: 0 0 0.65rem;
+  color: var(--color-forest);
+  font: 400 1.45rem / 1.2 var(--font-display);
+}
+
+.h2-program-copy p {
+  margin: 0 0 1.4rem;
+  color: var(--color-muted);
+  font-size: 0.84rem;
+  line-height: 1.75;
+  flex: 1;
+}
+
+.h2-program-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: flex-start;
+  color: var(--color-forest);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.h2-program-link:hover {
+  color: #965A16;
+}
+
+.h2-program-link span {
+  transition: transform 0.2s ease;
+}
+
+.h2-program-link:hover span {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   5. Metrics & Proof Section
+   -------------------------------------------------------------------------- */
+.h2-metrics-section {
+  background: var(--color-forest);
+  color: #FFFFFF;
+}
+
+.h2-metrics-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: clamp(2.5rem, 6vw, 6rem);
+}
+
+.h2-metrics-intro .eyebrow {
+  color: #D4C28F;
+}
+
+.h2-metrics-intro h2 {
+  max-width: 440px;
+  margin: 0.8rem 0 1rem;
+  color: #FFFFFF;
+  font: 400 clamp(2.4rem, 4vw, 3.8rem) / 1.1 var(--font-display);
+}
+
+.h2-metrics-intro p {
+  max-width: 420px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.92rem;
+  line-height: 1.8;
+}
+
+.h2-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.h2-metric-card {
+  padding: 1.6rem 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+}
+
+.h2-metric-number {
+  display: block;
+  color: #D9B167;
+  font: 400 clamp(2.2rem, 3.8vw, 3.2rem) / 1 var(--font-display);
+  margin-bottom: 0.4rem;
+}
+
+.h2-metric-card h3 {
+  margin: 0 0 0.35rem;
+  color: #FFFFFF;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.h2-metric-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.76rem;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   6. 4-Phase Engineered Workflow
+   -------------------------------------------------------------------------- */
+.h2-workflow-section {
+  background: #FBFAF6;
+}
+
+.h2-workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.h2-workflow-card {
+  position: relative;
+  padding: 1.8rem 1.3rem;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(38, 51, 47, 0.04);
+}
+
+.h2-workflow-card .step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #183F35;
+  color: #D9B167;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-bottom: 1.1rem;
+}
+
+.h2-workflow-card h3 {
+  margin: 0 0 0.5rem;
+  color: var(--color-forest);
+  font: 400 1.22rem / 1.2 var(--font-display);
+}
+
+.h2-workflow-card p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   7. Testimonials / Case Studies
+   -------------------------------------------------------------------------- */
+.h2-testimonials-section {
+  background: #F0EEE6;
+}
+
+.h2-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.35rem;
+}
+
+.h2-test-card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.4rem, 2.5vw, 1.85rem);
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  background: #FFFFFF;
+  box-shadow: 0 10px 28px rgba(38, 51, 47, 0.05);
+}
+
+.h2-test-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+}
+
+.h2-test-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: #E8EFEA;
+  color: var(--color-forest);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.h2-test-card blockquote {
+  flex: 1;
+  margin: 0 0 1.4rem;
+  color: var(--color-charcoal);
+  font: 400 clamp(0.98rem, 1.25vw, 1.12rem) / 1.6 var(--font-display);
+}
+
+.h2-test-author {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(38, 51, 47, 0.08);
+  color: var(--color-forest);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.h2-test-author span {
+  color: var(--color-muted);
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   8. FAQ Section
+   -------------------------------------------------------------------------- */
+.h2-faq-section {
+  background: #FBFAF6;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Layouts
+   -------------------------------------------------------------------------- */
+@media (max-width: 1050px) {
+  .h2-tech-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .h2-workflow-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .h2-metrics-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .h2-metrics-intro h2,
+  .h2-metrics-intro p {
+    max-width: 600px;
+  }
+  .h2-trust-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .rotary-telemetry-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 760px) {
+  .h2-hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: calc(66px + 2rem) 0 3.5rem;
+  }
+  .h2-hero h1 {
+    font-size: clamp(2.8rem, 10vw, 4.8rem);
+  }
+  .h2-programs-grid {
+    grid-template-columns: 1fr;
+  }
+  .h2-testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  .rotary-frame {
+    aspect-ratio: 4 / 3;
+    min-height: 320px;
+  }
+  .rotary-surface-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .rotary-pill {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .h2-hero {
+    padding-top: calc(58px + 1.8rem);
+  }
+  .h2-tech-grid {
+    grid-template-columns: 1fr;
+  }
+  .h2-workflow-grid {
+    grid-template-columns: 1fr;
+  }
+  .h2-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  .h2-trust-strip {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+    padding: 1rem 1.2rem;
+  }
+  .h2-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 290px;
+    margin-inline: auto;
+  }
+  .h2-hero-actions .button {
+    width: 100%;
+  }
+  .rotary-machine-head {
+    width: 54px;
+    height: 54px;
+  }
+  .rotary-head-icon {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* ==========================================================================
+   Home 2 Page Dark Mode Theme Styles
+   ========================================================================== */
+:root.theme-dark .rotary-showcase-section {
+  background: #101E19;
+}
+:root.theme-dark .rotary-pill {
+  background: #14241F;
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--color-heading);
+}
+:root.theme-dark .rotary-pill.is-active {
+  background: #D9B167;
+  color: #0D1714;
+  border-color: #D9B167;
+}
+:root.theme-dark .rotary-pill.is-active span.pill-badge {
+  background: #0D1714;
+  color: #D9B167;
+}
+:root.theme-dark .pill-badge {
+  background: #1C332A;
+  color: #D9B167;
+}
+:root.theme-dark .rotary-frame {
+  border-color: #1A3127;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+:root.theme-dark .rotary-telemetry-bar {
+  background: #14241F;
+  border-color: rgba(255, 255, 255, 0.10);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+:root.theme-dark .telemetry-status {
+  color: #D9B167;
+}
+:root.theme-dark .telemetry-detail {
+  color: var(--color-muted);
+}
+:root.theme-dark .auto-clean-btn {
+  background: #1C332A;
+  border-color: rgba(217, 177, 103, 0.4);
+  color: #D9B167;
+}
+:root.theme-dark .auto-clean-btn:hover {
+  background: #D9B167;
+  color: #0D1714;
+}
+:root.theme-dark .auto-clean-btn.is-running {
+  background: #D9B167;
+  color: #0D1714;
+}
+
+:root.theme-dark .h2-tech-section {
+  background: #101E19;
+}
+:root.theme-dark .h2-tech-card {
+  background: #14241F;
+  border-color: rgba(255, 255, 255, 0.10);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+}
+:root.theme-dark .h2-tech-card h3 {
+  color: var(--color-heading);
+}
+:root.theme-dark .h2-tech-card p {
+  color: var(--color-muted);
+}
+:root.theme-dark .h2-tech-icon {
+  background: #1C332A;
+  color: #D9B167;
+}
+
+:root.theme-dark .h2-programs-section {
+  background: #101E19;
+}
+:root.theme-dark .h2-program-card {
+  background: #14241F;
+  border-color: rgba(255, 255, 255, 0.10);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+}
+:root.theme-dark .h2-program-copy h3 {
+  color: var(--color-heading);
+}
+:root.theme-dark .h2-program-copy p {
+  color: var(--color-muted);
+}
+:root.theme-dark .h2-program-link {
+  color: #D9B167;
+}
+
+:root.theme-dark .h2-metrics-section {
+  background: #0D1915;
+}
+:root.theme-dark .h2-metric-card {
+  background: #142520;
+  border-color: rgba(255, 255, 255, 0.10);
+}
+
+:root.theme-dark .h2-workflow-section {
+  background: #101E19;
+}
+:root.theme-dark .h2-workflow-card {
+  background: #14241F;
+  border-color: rgba(255, 255, 255, 0.10);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+:root.theme-dark .h2-workflow-card .step-num {
+  background: #1C332A;
+  color: #D9B167;
+}
+:root.theme-dark .h2-workflow-card h3 {
+  color: var(--color-heading);
+}
+:root.theme-dark .h2-workflow-card p {
+  color: var(--color-muted);
+}
+
+:root.theme-dark .h2-testimonials-section {
+  background: #12211C;
+}
+:root.theme-dark .h2-test-card {
+  background: #14241F;
+  border-color: rgba(255, 255, 255, 0.10);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+}
+:root.theme-dark .h2-test-card blockquote {
+  color: #E5ECE8;
+}
+:root.theme-dark .h2-test-tag {
+  background: #1C332A;
+  color: #D9B167;
+}
+:root.theme-dark .h2-test-author {
+  border-top-color: rgba(255, 255, 255, 0.10);
+  color: var(--color-heading);
+}
+
+:root.theme-dark .h2-faq-section {
+  background: #101E19;
+}
