@@ -249,6 +249,22 @@
   }
 }
 
+@media (max-width: 540px) {
+  .faq-question {
+    padding: 1rem 1.15rem;
+    font-size: 0.95rem;
+  }
+  .faq-answer {
+    padding: 0 1.15rem 1.15rem;
+  }
+  .faq-category-title {
+    font-size: 1.35rem;
+  }
+  .faq-contact-card {
+    padding: 1.3rem 1.1rem;
+  }
+}
+
 /* FAQ Page Dark Mode Theme Styles */
 :root.theme-dark .faq-category-title {
   color: var(--color-heading);

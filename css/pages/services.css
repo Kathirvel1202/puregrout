@@ -50,12 +50,12 @@
 /* Optional configurable services */
 .optional-section { background: #FBFAF6; }
 .optional-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: .9rem; }
-.optional-card { min-height: 240px; padding: 1.35rem; border: 1px solid var(--color-border); border-radius: 20px; background: var(--color-white); transition: transform .25s ease,box-shadow .25s ease; }
+.optional-card { display: flex; flex-direction: column; min-height: 245px; padding: 1.35rem; border: 1px solid var(--color-border); border-radius: 20px; background: var(--color-white); transition: transform .25s ease,box-shadow .25s ease; }
 .optional-card:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(38,51,47,.09); }
 .optional-number { color: #8C6220; font-size: .68rem; font-weight: 700; letter-spacing: .1em; }
-.optional-card h3 { margin: 1rem 0 .55rem; color: var(--color-forest); font: 400 1.35rem/1.15 var(--font-display); }
-.optional-card p { margin: 0 0 1rem; color: var(--color-muted); font-size: .74rem; line-height: 1.7; }
-.configurable-label { display: inline-block; padding: .36rem .55rem; border-radius: 999px; background: #F1EEE5; color: #78643D; font-size: .58rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.optional-card h3 { margin: 0.95rem 0 .65rem; color: var(--color-forest); font: 400 clamp(1.18rem, 1.3vw, 1.28rem)/1.22 var(--font-display); min-height: 2.85rem; display: flex; align-items: flex-start; }
+.optional-card p { margin: 0 0 1rem; color: var(--color-muted); font-size: .74rem; line-height: 1.7; flex-grow: 1; }
+.configurable-label { display: inline-block; align-self: flex-start; margin-top: auto; padding: .36rem .55rem; border-radius: 999px; background: #F1EEE5; color: #78643D; font-size: .58rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
 
 /* Process steps */
 .service-process-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1.2rem; margin-block: 0; padding: 0; list-style: none; }
@@ -130,6 +130,7 @@
   .grout-feature-image { height: 300px; }
   .optional-grid, .service-process-grid { grid-template-columns: 1fr; }
   .optional-card { min-height: 0; }
+  .optional-card h3 { min-height: 0; }
   .service-process-grid li { min-height: 0; }
   .services-faq-intro h2 { font-size: 2.5rem; }
 }

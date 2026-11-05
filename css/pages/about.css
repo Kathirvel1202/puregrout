@@ -266,6 +266,13 @@
   .values-grid {
     grid-template-columns: 1fr;
   }
+  .about-story-copy h2,
+  .equipment-copy h2 {
+    font-size: 2.25rem;
+  }
+  .equipment-media {
+    height: 280px;
+  }
 }
 
 /* About Page Dark Mode Theme Styles */

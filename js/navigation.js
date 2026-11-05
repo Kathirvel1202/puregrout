@@ -40,65 +40,6 @@
     });
   }
 
-  function initModals() {
-    const modal = document.querySelector('#login-modal');
-    if (!modal) return;
-
-    function openModal() {
-      if (typeof modal.showModal === 'function') {
-        modal.showModal();
-      } else {
-        modal.setAttribute('open', '');
-      }
-      document.body.style.overflow = 'hidden';
-      const input = modal.querySelector('input');
-      if (input) setTimeout(() => input.focus(), 50);
-    }
-
-    function closeModal() {
-      if (typeof modal.close === 'function') {
-        modal.close();
-      } else {
-        modal.removeAttribute('open');
-      }
-      document.body.style.overflow = '';
-    }
-
-    document.addEventListener('click', (e) => {
-      if (e.target.closest('[data-modal-open="login-modal"]')) {
-        e.preventDefault();
-        openModal();
-      } else if (e.target.closest('[data-modal-close]')) {
-        e.preventDefault();
-        closeModal();
-      }
-    });
-
-    modal.addEventListener('cancel', () => {
-      document.body.style.overflow = '';
-    });
-
-    const portalForm = document.querySelector('#portal-form');
-    if (portalForm) {
-      portalForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const submitBtn = portalForm.querySelector('button[type="submit"]');
-        const origText = submitBtn.textContent;
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Connecting to Secure Server...';
-        setTimeout(() => {
-          submitBtn.textContent = 'Demo Mode: Verified!';
-          setTimeout(() => {
-            closeModal();
-            submitBtn.disabled = false;
-            submitBtn.textContent = origText;
-            portalForm.reset();
-          }, 900);
-        }, 800);
-      });
-    }
-  }
-
   function initDropdowns() {
     const dropdownItems = document.querySelectorAll('[data-dropdown]');
 
@@ -133,7 +74,7 @@
       item.addEventListener('mouseleave', close);
 
       link.addEventListener('click', (e) => {
-        if (window.innerWidth <= 960) {
+        if (window.innerWidth <= 980) {
           e.preventDefault();
           const isOpen = item.classList.contains('is-open');
           if (isOpen) {
@@ -209,7 +150,7 @@
     });
 
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 960) {
+      if (window.innerWidth > 980) {
         closeNav();
       }
     });
@@ -235,7 +176,6 @@
     init() {
       initTheme();
       initDirToggle();
-      initModals();
       initDropdowns();
       initMobileMenu();
       initStickyScroll();

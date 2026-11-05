@@ -60,12 +60,12 @@
 
 .addons-section { background: #EFEEE6; }
 .addons-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: .9rem; }
-.addon-card { min-height: 210px; padding: 1.3rem; border: 1px solid rgba(38,51,47,.1); border-radius: 18px; background: rgba(255,255,255,.72); transition: transform .2s ease,box-shadow .2s ease; }
+.addon-card { display: flex; flex-direction: column; min-height: 210px; padding: 1.3rem; border: 1px solid rgba(38,51,47,.1); border-radius: 18px; background: rgba(255,255,255,.72); transition: transform .2s ease,box-shadow .2s ease; }
 .addon-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(38,51,47,.08); }
-.addon-index { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 50%; background: #E3EADF; color: var(--color-forest); font-size: .65rem; font-weight: 700; }
+.addon-index { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 50%; background: #E3EADF; color: var(--color-forest); font-size: .65rem; font-weight: 700; flex-shrink: 0; }
 .addon-card h3 { margin: 1rem 0 .55rem; color: var(--color-forest); font: 400 1.28rem/1.1 var(--font-display); }
-.addon-card p { margin: 0 0 .9rem; color: var(--color-muted); font-size: .7rem; line-height: 1.7; }
-.addon-price { color: #7B6946; font-size: .63rem; font-weight: 700; }
+.addon-card p { margin: 0 0 .9rem; color: var(--color-muted); font-size: .7rem; line-height: 1.7; flex-grow: 1; }
+.addon-price { color: #7B6946; font-size: .63rem; font-weight: 700; margin-top: auto; }
 
 .pricing-process { background: #FBFAF6; }
 .pricing-steps { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1rem; margin: 0; padding: 0; list-style: none; }

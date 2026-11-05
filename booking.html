@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F8F6F0">
+  <meta name="description" content="Book professional tile and grout cleaning online with PureGrout. Schedule 230°F thermal extraction, deep line scrubbing, and protective sealing for homes and businesses.">
+  <link rel="canonical" href="https://puregrout.com/booking.html">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="assets/icons/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="assets/icons/favicon-32x32.png">
+  <title>Online Booking &amp; Service Reservation | PureGrout</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Online Booking &amp; Service Reservation | PureGrout">
+  <meta property="og:description" content="Schedule professional tile &amp; grout restoration online. Select your service, choose a date &amp; time window, and reserve certified specialists.">
+  <meta property="og:url" content="https://puregrout.com/booking.html">
+  <meta property="og:image" content="https://puregrout.com/assets/images/tile-cleaning-action.webp">
+  <meta property="og:image:alt" content="Cleaning specialist restoring tile floors with extraction wand">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/pages/booking.css">
+  <script src="js/components.js" defer></script>
+  <script src="js/navigation.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/booking.js" defer></script>
+  <script>
+    (function () {
+      try {
+        var s = localStorage.getItem('puregrout-theme');
+        var d = s ? s === 'dark' : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (d) document.documentElement.classList.add('theme-dark');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="booking">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div id="site-header"></div>
+
+  <main id="main-content" tabindex="-1">
+    <!-- Hero Banner (Full-bleed Centered Banner) -->
+    <section class="booking-hero" aria-labelledby="booking-hero-title">
+      <div class="booking-hero-content site-container">
+        <nav class="breadcrumbs booking-breadcrumbs" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Booking</li>
+          </ol>
+        </nav>
+        <p class="eyebrow">Convenient Online Reservation</p>
+        <h1 id="booking-hero-title">Book Your Tile &amp; Grout Cleaning.</h1>
+        <p class="booking-hero-sub">Select your surfaces, choose your preferred appointment time, and schedule certified high-temperature extraction tailored for your home or commercial space.</p>
+        <div class="hero-highlights">
+          <span class="highlight-chip">✦ 230°F Hydro-Thermal Rinse</span>
+          <span class="highlight-chip">✓ Upfront Fixed Rates</span>
+          <span class="highlight-chip">★ 100% Satisfaction Guarantee</span>
+          <span class="highlight-chip">⚡ Same-Week Dispatch</span>
+        </div>
+      </div>
+      <div class="booking-hero-image" role="img" aria-label="Clean gleaming tiled space restored by PureGrout"></div>
+      <div class="booking-hero-overlay" aria-hidden="true"></div>
+    </section>
+
+    <!-- Main Booking Section with Form & Live Summary -->
+    <section class="booking-section section-space" aria-labelledby="booking-form-heading">
+      <div class="site-container booking-grid">
+        
+        <!-- Left: Comprehensive Reservation Form -->
+        <div class="booking-card form-column">
+          <div class="form-header">
+            <span class="step-badge">Step-by-Step Scheduling</span>
+            <h2 id="booking-form-heading">Reserve Your Cleaning Appointment</h2>
+            <p>Complete the form below to lock in your preferred date and time. Our dispatch team reviews your requirements and confirms your slot within 30 minutes.</p>
+          </div>
+
+          <form id="booking-form" novalidate>
+            <div class="booking-form-steps">
+              
+              <!-- Section 1: Service Selection -->
+              <fieldset class="form-step-group">
+                <legend class="step-legend">
+                  <span class="step-num">1</span>
+                  <span>Select Service &amp; Property Details</span>
+                </legend>
+                
+                <div class="booking-fields">
+                  <div class="form-field">
+                    <label for="service-required">Primary Service Needed <span class="required-star">*</span></label>
+                    <select id="service-required" name="service" required aria-describedby="error-service-required">
+                      <option value="">Select a service category</option>
+                      <option value="tile-floor-cleaning">Tile Floor Deep Cleaning</option>
+                      <option value="bathroom-cleaning">Bathroom &amp; Shower Grout Restoration</option>
+                      <option value="kitchen-cleaning">Kitchen Floor &amp; Backsplash Degreasing</option>
+                      <option value="grout-cleaning">Grout Cleaning &amp; Sanitize</option>
+                      <option value="grout-restoration">Complete Grout Line Restoration</option>
+                      <option value="complete-cleaning">Whole-Property Deep Cleaning</option>
+                      <option value="other">Commercial Facility / Other</option>
+                    </select>
+                    <small class="field-error" id="error-service-required" data-error-for="service-required"></small>
+                  </div>
+
+                  <div class="form-field">
+                    <label for="package-choice">Service Package Tier <span class="optional-tag">Recommended</span></label>
+                    <select id="package-choice" name="package">
+                      <option value="">Choose a package tier</option>
+                      <option value="essential-refresh">Essential Refresh ($149 / room) · Deep Steam Rinse</option>
+                      <option value="deep-clean" selected>Deep Clean ($229 / room) · Rotary Extraction + Clear Seal (Most Popular)</option>
+                      <option value="complete-restoration">Complete Restoration ($349 / room) · Thermal + ColorSeal + Polishing</option>
+                    </select>
+                    <small class="field-hint">Package selection applies our bundled discounts automatically.</small>
+                  </div>
+
+                  <div class="form-field">
+                    <label for="property-type">Property Category <span class="required-star">*</span></label>
+                    <select id="property-type" name="propertyType" required aria-describedby="error-property-type">
+                      <option value="">Select property type</option>
+                      <option value="residential">Residential (Home / Condo / Apartment)</option>
+                      <option value="commercial">Commercial (Restaurant / Office / Retail / Hotel)</option>
+                    </select>
+                    <small class="field-error" id="error-property-type" data-error-for="property-type"></small>
+                  </div>
+
+                  <div class="form-field">
+                    <label for="area-size">Approximate Area / Number of Rooms <span class="required-star">*</span></label>
+                    <input id="area-size" name="areaSize" type="text" required maxlength="120" placeholder="e.g. Kitchen &amp; 2 Bathrooms (approx. 350 sq.ft.)" aria-describedby="error-area-size">
+                    <small class="field-error" id="error-area-size" data-error-for="area-size"></small>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- Section 2: Date & Time Schedule -->
+              <fieldset class="form-step-group">
+                <legend class="step-legend">
+                  <span class="step-num">2</span>
+                  <span>Preferred Date &amp; Arrival Window</span>
+                </legend>
+
+                <div class="booking-fields">
+                  <div class="form-field">
+                    <label for="preferred-date">Preferred Service Date <span class="required-star">*</span></label>
+                    <input id="preferred-date" name="preferredDate" type="date" required aria-describedby="error-preferred-date">
+                    <small class="field-error" id="error-preferred-date" data-error-for="preferred-date"></small>
+                  </div>
+
+                  <div class="form-field">
+                    <label for="preferred-time">Arrival Time Window <span class="required-star">*</span></label>
+                    <select id="preferred-time" name="preferredTime" required aria-describedby="error-preferred-time">
+                      <option value="">Select a convenient arrival time</option>
+                      <option value="Morning">Morning (8:00 AM – 11:30 AM)</option>
+                      <option value="Midday">Midday (11:30 AM – 2:30 PM)</option>
+                      <option value="Afternoon">Afternoon (2:30 PM – 5:30 PM)</option>
+                      <option value="Flexible">Flexible (Anytime during the day)</option>
+                    </select>
+                    <small class="field-error" id="error-preferred-time" data-error-for="preferred-time"></small>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- Section 3: Contact & Service Location -->
+              <fieldset class="form-step-group">
+                <legend class="step-legend">
+                  <span class="step-num">3</span>
+                  <span>Contact Information &amp; Service Location</span>
+                </legend>
+
+                <div class="booking-fields">
+                  <div class="form-field">
+                    <label for="full-name">Full Name <span class="required-star">*</span></label>
+                    <input id="full-name" name="fullName" type="text" autocomplete="name" required minlength="2" maxlength="120" placeholder="e.g. Sarah Jenkins" aria-describedby="error-full-name">
+                    <small class="field-error" id="error-full-name" data-error-for="full-name"></small>
+                  </div>
+
+                  <div class="form-field">
+                    <label for="phone-number">Mobile Phone Number <span class="required-star">*</span></label>
+                    <input id="phone-number" name="phone" type="tel" autocomplete="tel" required maxlength="30" placeholder="e.g. (555) 789-8453" aria-describedby="error-phone-number">
+                    <small class="field-error" id="error-phone-number" data-error-for="phone-number"></small>
+                  </div>
+
+                  <div class="form-field form-field-full">
+                    <label for="email-address">Email Address <span class="required-star">*</span></label>
+                    <input id="email-address" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="e.g. sarah@example.com" aria-describedby="error-email-address">
+                    <small class="field-error" id="error-email-address" data-error-for="email-address"></small>
+                  </div>
+
+                  <div class="form-field form-field-full">
+                    <label for="service-address">Service Street Address &amp; Unit <span class="required-star">*</span></label>
+                    <input id="service-address" name="address" type="text" autocomplete="street-address" required maxlength="240" placeholder="Street address, apartment/suite, city, zip code" aria-describedby="error-service-address">
+                    <small class="field-error" id="error-service-address" data-error-for="service-address"></small>
+                  </div>
+
+                  <div class="form-field form-field-full">
+                    <label for="requirements">Surface Condition &amp; Access Notes <span class="optional-tag">Optional</span></label>
+                    <textarea id="requirements" name="requirements" maxlength="2000" rows="3" placeholder="Tell us about stubborn stains, mold areas, parking instructions, or gate codes..."></textarea>
+                  </div>
+
+                  <div class="form-field form-field-full upload-field">
+                    <label for="image-upload">Upload Tile &amp; Grout Photos <span class="optional-tag">Optional · Max 8MB</span></label>
+                    <input id="image-upload" name="image" type="file" accept="image/jpeg,image/png,image/webp,image/gif" aria-describedby="image-upload-help error-image-upload">
+                    <span class="field-hint" id="image-upload-help">JPG, PNG, or WebP. Sharing photos allows our team to pre-assess stain depth and ensure the correct extraction tools are dispatched.</span>
+                    <small class="field-error" id="error-image-upload" data-error-for="image-upload"></small>
+                    <div id="image-preview" class="image-preview" hidden>
+                      <img id="image-preview-image" alt="Preview of uploaded floor tile photo" width="88" height="68">
+                      <div><span id="image-preview-name"></span><button id="remove-image" class="remove-image" type="button">Remove image</button></div>
+                    </div>
+                  </div>
+
+                  <div class="privacy-field form-field-full">
+                    <input id="privacy-consent" name="privacyConsent" type="checkbox" required aria-describedby="error-privacy-consent">
+                    <label for="privacy-consent">I confirm my booking request and agree to be contacted via phone, email, or WhatsApp regarding this appointment. <span class="required-star">*</span></label>
+                    <small class="field-error" id="error-privacy-consent" data-error-for="privacy-consent"></small>
+                  </div>
+                </div>
+              </fieldset>
+
+              <div class="form-submit-row">
+                <button class="button button-gold submit-button" id="prepare-request" type="submit">
+                  <span class="button-label">Confirm &amp; Prepare Booking Request &rarr;</span>
+                  <span class="button-spinner" aria-hidden="true"></span>
+                </button>
+                <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+              </div>
+            </div>
+          </form>
+
+          <!-- Success & Dispatch Handoff State -->
+          <section class="booking-success" id="booking-success" aria-labelledby="booking-success-title" tabindex="-1" hidden>
+            <span class="success-mark" aria-hidden="true">✓</span>
+            <p class="eyebrow">Reservation Summary Generated</p>
+            <h3 id="booking-success-title">Your Booking Request is Ready!</h3>
+            <p class="success-message">Select your preferred dispatch channel below to transmit your appointment details directly to our priority dispatch queue:</p>
+            <div class="booking-summary">
+              <h4>Scheduled Appointment Details</h4>
+              <pre id="booking-summary-text"></pre>
+            </div>
+            <p class="attachment-note">Photos you previewed can be attached easily in WhatsApp or your email client once the window opens.</p>
+            <div class="handoff-actions">
+              <a class="button button-primary" id="whatsapp-handoff" href="#" target="_blank" rel="noopener noreferrer" aria-disabled="true">Dispatch via WhatsApp <span aria-hidden="true">↗</span></a>
+              <a class="button button-secondary" id="email-handoff" href="#" aria-disabled="true">Dispatch via Email <span aria-hidden="true">↗</span></a>
+            </div>
+            <p class="configuration-note" id="handoff-configuration-note">Our dispatch manager will review your surface requirements and confirm technician arrival time.</p>
+          </section>
+        </div>
+
+        <!-- Right: Sticky Trust & Value Summary Sidebar -->
+        <aside class="booking-sidebar">
+          <div class="sidebar-card service-guarantee-card">
+            <h3>Why Book With PureGrout?</h3>
+            <ul class="guarantee-list">
+              <li>
+                <span class="g-icon">✦</span>
+                <div>
+                  <strong>230°F Thermal Rinse</strong>
+                  <p>Counter-rotating hydro agitation extracts deep soil without scratching delicate glazes.</p>
+                </div>
+              </li>
+              <li>
+                <span class="g-icon">🛡️</span>
+                <div>
+                  <strong>Fluoropolymer Protection</strong>
+                  <p>Penetrating grout sealers lock out spills, oils, and mold formation for years.</p>
+                </div>
+              </li>
+              <li>
+                <span class="g-icon">⏱️</span>
+                <div>
+                  <strong>Fast 1-Hour Dry Time</strong>
+                  <p>Walk on your restored floors the very same day with zero downtime.</p>
+                </div>
+              </li>
+              <li>
+                <span class="g-icon">★</span>
+                <div>
+                  <strong>100% Satisfaction Guarantee</strong>
+                  <p>If any grout line doesn't meet your expectation, we reclean it free of charge.</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="sidebar-callout">
+              <span class="callout-label">Need Immediate Service?</span>
+              <p>For urgent commercial cleans or questions, call our dispatch line directly:</p>
+              <a class="sidebar-phone-btn" href="tel:5557898453">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 11.19 18a19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.09 3.18 2 2 0 0 1 4.08 1h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.11L8.06 8.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.84.58 2.8.7A2 2 0 0 1 22 16.92Z"/></svg>
+                <span>(555) 789-8453</span>
+              </a>
+            </div>
+
+            <div class="sidebar-badge-strip">
+              <span class="trust-badge-pill">✓ Bonded &amp; Insured</span>
+              <span class="trust-badge-pill">✓ EPA Safer Choice</span>
+              <span class="trust-badge-pill">★ 4.9/5 Rating (320+ Reviews)</span>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- FAQ Section for Booking -->
+    <section class="booking-faq-section section-space" aria-labelledby="booking-faq-title">
+      <div class="site-container">
+        <div class="section-heading">
+          <p class="eyebrow">Booking Assistance</p>
+          <h2 id="booking-faq-title">Frequently Asked Questions About Booking</h2>
+          <p>Everything you need to know about scheduling, technician arrival, and our cleaning process.</p>
+        </div>
+
+        <div class="booking-faq-grid">
+          <article class="b-faq-card">
+            <h3>How far in advance should I book?</h3>
+            <p>We recommend booking 2 to 4 days ahead for residential homes. For commercial properties needing after-hours or weekend service, scheduling 1 week in advance ensures your preferred time slot.</p>
+          </article>
+          <article class="b-faq-card">
+            <h3>Do I need to move heavy furniture?</h3>
+            <p>Our technicians can carefully move lightweight furniture like chairs, tables, and floor mats. For large entertainment centers or heavy appliances, we clean up to the baseboards unless pre-cleared.</p>
+          </article>
+          <article class="b-faq-card">
+            <h3>How long does an appointment take?</h3>
+            <p>Most residential projects (such as a kitchen and two bathrooms) take approximately 1.5 to 2.5 hours. Commercial dining rooms and lobbies vary by square footage.</p>
+          </article>
+          <article class="b-faq-card">
+            <h3>Can I change or cancel my appointment?</h3>
+            <p>Yes. You can reschedule or cancel at any time with at least 24 hours notice at no charge by contacting our dispatch team by phone or WhatsApp.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>
+

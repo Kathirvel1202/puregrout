@@ -336,7 +336,7 @@
   .gallery-item-tall { grid-row: span 2; }
   .gallery-item-wide { grid-column: span 2; }
   .gallery-item span { bottom: .7rem; left: .7rem; font-size: .95rem; }
-  .gallery-lightbox { width: 100vw; max-height: 88vh; padding: 3rem 2.5rem 1.5rem; border-radius: 16px; }
+  .gallery-lightbox { width: min(calc(100vw - 1.5rem), 480px); max-height: 88vh; padding: 3rem 1.5rem 1.5rem; border-radius: 16px; margin: auto; }
   .lightbox-nav { width: 38px; height: 38px; }
   .lightbox-prev { left: .35rem; }
   .lightbox-next { right: .35rem; }

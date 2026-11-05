@@ -14,8 +14,7 @@
     { key: 'process', label: 'Process', href: 'process.html' },
     { key: 'pricing', label: 'Pricing', href: 'pricing.html' },
     { key: 'faq', label: 'FAQ', href: 'faq.html' },
-    { key: 'contact', label: 'Contact', href: 'contact.html' },
-    { key: 'dashboard', label: 'Dashboard', href: '#login-modal', triggerModal: true }
+    { key: 'contact', label: 'Contact', href: 'contact.html' }
   ];
 
   function brandMarkup() {
@@ -54,22 +53,20 @@
   function headerMarkup() {
     const currentPage = document.body.dataset.page || 'home';
 
-    const linksHtml = navigationItems.map(({ key, label, href, dropdown, triggerModal }) => {
+    const linksHtml = navigationItems.map(({ key, label, href, dropdown }) => {
       const active = currentPage === key || (key === 'home' && (currentPage === 'home' || currentPage === 'home1' || currentPage === 'home2'));
       const hasDropdown = Array.isArray(dropdown) && dropdown.length > 0;
 
       if (!hasDropdown) {
-        const modalAttr = triggerModal ? ' data-modal-open="login-modal"' : '';
         return `<li class="nav-item">
-          <a href="${href}" class="nav-link ${active ? 'is-active' : ''}" ${active ? 'aria-current="page"' : ''}${modalAttr}>${label}</a>
+          <a href="${href}" class="nav-link ${active ? 'is-active' : ''}" ${active ? 'aria-current="page"' : ''}>${label}</a>
         </li>`;
       }
 
       const dropdownItems = dropdown.map(item => {
-        const modalAttr = item.triggerModal ? ' data-modal-open="login-modal"' : '';
         const itemActive = (item.href === 'index.html' && (currentPage === 'home' || currentPage === 'home1')) ||
                            (item.href === 'home-2.html' && currentPage === 'home2');
-        return `<a href="${item.href}" class="dropdown-item ${itemActive ? 'is-current' : ''}"${modalAttr}>
+        return `<a href="${item.href}" class="dropdown-item ${itemActive ? 'is-current' : ''}">
           <span class="dropdown-item-title">${item.label}</span>
           ${item.desc ? `<span class="dropdown-item-desc">${item.desc}</span>` : ''}
         </a>`;
@@ -126,8 +123,8 @@
           <!-- Vertical separator -->
           <span class="nav-v-divider" aria-hidden="true"></span>
 
-          <!-- Solid Amber-Gold Pill Button: Login -->
-          <button class="nav-login-btn" type="button" data-modal-open="login-modal" aria-haspopup="dialog">Login</button>
+          <!-- Solid Amber-Gold Pill Button: Booking -->
+          <a class="nav-booking-btn" href="booking.html">Booking</a>
 
           <!-- Mobile Hamburger Toggle -->
           <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation menu">
@@ -140,58 +137,24 @@
           </button>
         </div>
       </div>
-    </header>
-
-    <!-- Client Portal / Login Dialog -->
-    <dialog id="login-modal" class="portal-modal" aria-labelledby="modal-login-title">
-      <div class="portal-modal-backdrop" data-modal-close></div>
-      <div class="portal-modal-card" role="document">
-        <button class="modal-close-btn" type="button" data-modal-close aria-label="Close dialog">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
-        </button>
-        <div class="modal-badge">
-          <span class="badge-dot"></span> Client Access Portal
-        </div>
-        <h2 id="modal-login-title">PureGrout Client Portal</h2>
-        <p class="modal-sub">View your scheduled cleaning appointments, download service receipts, or review quotes.</p>
-        
-        <form class="modal-form" id="portal-form">
-          <div class="form-field">
-            <label for="portal-email">Email or Phone Number</label>
-            <input type="text" id="portal-email" placeholder="e.g. client@example.com" required>
-          </div>
-          <div class="form-field">
-            <label for="portal-ref">Booking Reference or Password</label>
-            <input type="password" id="portal-ref" placeholder="Enter reference code" required>
-          </div>
-          <div class="form-row-options">
-            <label class="checkbox-label"><input type="checkbox" checked> Remember device</label>
-            <a href="contact.html" class="forgot-link">Need booking help?</a>
-          </div>
-          <button type="submit" class="button button-gold modal-submit-btn">Access Client Portal &rarr;</button>
-        </form>
-        
-        <div class="modal-footer-note">
-          <p>Don't have a booking yet? <a href="contact.html">Request a Free Inspection Quote &rarr;</a></p>
-        </div>
-      </div>
-    </dialog>`;
+    </header>`;
   }
 
-  function socialIcon(name, svg) {
-    return `<a href="https://${name.toLowerCase()}.com" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Follow PureGrout on ${name}">${svg}</a>`;
+  function socialIcon(name, svg, href) {
+    const url = href || `https://${name.toLowerCase()}.com`;
+    const action = name === 'WhatsApp' ? 'Message' : 'Follow';
+    return `<a href="${url}" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="${action} PureGrout on ${name}">${svg}</a>`;
   }
 
   function footerMarkup() {
     const quickLinks = [
-      { label: 'Home 1 (Residential)', href: 'index.html' },
-      { label: 'Home 2 (Commercial & Modern)', href: 'home-2.html' },
       { label: 'About Us', href: 'about.html' },
       { label: 'Our Services', href: 'services.html' },
       { label: 'Our Process', href: 'process.html' },
       { label: 'Pricing Guide', href: 'pricing.html' },
       { label: 'FAQ', href: 'faq.html' },
-      { label: 'Contact Us', href: 'contact.html' }
+      { label: 'Contact Us', href: 'contact.html' },
+      { label: 'Online Booking', href: 'booking.html' }
     ].map(({ label, href }) => `<li><a href="${href}">${label}</a></li>`).join('');
 
     const services = [
@@ -205,6 +168,7 @@
     const instagram = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>';
     const facebook = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>';
     const youtube = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 15 5-3-5-3z"/><rect x="2" y="4" width="20" height="16" rx="5"/></svg>';
+    const whatsapp = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9l-5.05.9"/><path d="M9 10a.5.5 0 0 0 1 0v-1a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>';
 
     return `<footer class="site-footer">
       <div class="footer-grid">
@@ -215,6 +179,7 @@
             ${socialIcon('Instagram', instagram)}
             ${socialIcon('Facebook', facebook)}
             ${socialIcon('YouTube', youtube)}
+            ${socialIcon('WhatsApp', whatsapp, 'https://wa.me/15557898453')}
           </div>
           <p class="footer-certified-note">Certified Surface Specialists · Fully Insured &amp; Bonded</p>
         </section>
@@ -242,6 +207,7 @@
           <a href="process.html">Process</a>
           <a href="faq.html">FAQ</a>
           <a href="contact.html">Quote</a>
+          <a href="booking.html">Booking</a>
         </div>
       </div>
     </footer>`;
